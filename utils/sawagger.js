@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: process.env.MONGO_URI_DEV=="development"?'http://localhost:3000' : 'https://task-manager-nodejs-tye8.onrender.com'
+        url: process.env.NODE_ENV == "development" ? 'http://localhost:3000' : 'https://task-manager-nodejs-tye8.onrender.com'
       }
     ],
     components: {
