@@ -43,6 +43,8 @@ app.use(globalError); //Last Middleware
 
 ///////////////////MONGO DB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+console.log(process.env.MONGO_URI_PRO);
+
 mongoose.connect(process.env.NODE_ENV=="development" ? process.env.MONGO_URI_DEV :process.env.MONGO_URI_PRO)
 .then(()=>console.log("✅ Connected to MongoDB Successfully!"))
 .catch((error)=>console.log("❌Error:",error))
@@ -52,3 +54,5 @@ mongoose.connect(process.env.NODE_ENV=="development" ? process.env.MONGO_URI_DEV
 app.listen(PORT,()=>{
     console.log(`Server is Running on ${PORT}`)
 })
+
+
