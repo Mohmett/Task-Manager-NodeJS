@@ -2,7 +2,7 @@ import axios from "axios";
 import useAuthStore from "../store/authStore";
 
 
-const API_URL="http://localhost:3000/api";
+const API_URL="https://task-manager-nodejs-tye8.onrender.com";
 const api=axios.create({
     baseURL:API_URL,
     headers:{
