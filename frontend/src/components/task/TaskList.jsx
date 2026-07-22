@@ -138,8 +138,8 @@ const TaskList = ({ tasks, isLoading, onEdit, onDelete, onStatusChange }) => {
 
 
             {/* Task Tabs */}
-            <Tabs defaultValue="all" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 gap-2 md:grid-cols-4">
+            <Tabs defaultValue="all" className="flex flex-col gap-8 w-full">
+                <TabsList className="grid w-full grid-cols-2 gap-2  md:grid-cols-4">
                     <TabsTrigger value="all">
                         All Tasks
                         <Badge variant="primary" className="ml-2"> {stats?.allTasks} </Badge>
@@ -154,7 +154,7 @@ const TaskList = ({ tasks, isLoading, onEdit, onDelete, onStatusChange }) => {
                         <Badge variant="primary" className="ml-2"> {stats?.completedTasks} </Badge>
                     </TabsTrigger>
                 </TabsList>
-
+                <div>
                 <TabsContent value="all">
                     <TaskGrid
                         tasks={catogrisedTasks?.all}
@@ -179,6 +179,7 @@ const TaskList = ({ tasks, isLoading, onEdit, onDelete, onStatusChange }) => {
                         emptyMessage="No completed tasks."
                     />
                 </TabsContent>
+                </div>
             </Tabs>
 
         </div>
