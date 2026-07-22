@@ -50,7 +50,7 @@ app.use("/api/docs",swaggerUi.serve,swaggerUi.setup(swaggerSpec));
 
 
 // Server frontend in production
-if(process.env.MONGO_URI_DEV == "production"){
+if(process.env.NODE_ENV == "production"){
     const _dirname= path.dirname(fileURLToPath(import.meta.url));
     app.use(express.static(path.join(_dirname,'../frontend/dist')));
 
