@@ -56,7 +56,7 @@ if(process.env.MONGO_URI_DEV == "production"){
 
     // serve frontend
     app.get(/.*/, (req,res)=>{
-        res.send(path.join(_dirname,'..','frontend','dist','index.html'));
+        res.send(path.join(_dirname,'../frontend/dist/index.html'));
     })
 };
 
