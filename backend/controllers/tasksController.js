@@ -8,17 +8,16 @@ export const taskCreator = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-}
+};
 
 export const getTasks = async (req, res, next) => {
     try {
-        const tasks = await Task.find({ createdBy: req.student._id });
-        if (tasks < 1) return res.send("No tasks found your account")
+        const tasks = await Task.find({createdBy: req.student._id}).sort({createdAt:-1});
         res.status(200).json(tasks);
     } catch (error) {
         next();
     }
-}
+};
 
 export const deleteTask = async (req, res, next) => {
     const { id } = req.params;
@@ -28,7 +27,7 @@ export const deleteTask = async (req, res, next) => {
     } catch (error) {
         next();
     }
-}
+};
 
 export const updateTask= async (req,res,next)=>{
     const {id}= req.params;
@@ -40,7 +39,7 @@ export const updateTask= async (req,res,next)=>{
     } catch (error) {
         next(error);
     }
-}
+};
 
 // export const updateTask= async(req,res,nect)=>{
 //     const {id}=req.params;

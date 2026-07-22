@@ -3,6 +3,7 @@ import { login, registerStudent } from '../controllers/auth.js';
 import { protect } from '../middlewares/auth.js';
 import { validate } from '../middlewares/validateZod.js';
 import { createUserSchema } from '../schemas/userSchema.js';
+// removed unused import
 
 
 
@@ -80,8 +81,10 @@ authRoute.post('/login', login);
 
 // Protected Route
 authRoute.get('/profile', protect, (req, res) => {
-    console.log("Requested User Info:",req.student);
-    res.send(`${req.student.name}, Welcome Back!`);
-})
+    console.log("Requested User Info:", req.student);
+    // delay response using setTimeout
+    // setTimeout(() => res.status(200).json(req.student), 2000);
+    res.status(200).json(req.student)
+});
 
 export default authRoute;

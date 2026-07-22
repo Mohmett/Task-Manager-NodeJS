@@ -29,7 +29,9 @@ export const login = async (req, res, next) => {
             return res.status(401).json({ message: "Email or Password incorrect" })
         }
         const token = generateToken(student._id);
-        res.status(201).json({ token });
+        console.log(student);
+        student.password = undefined; // Remove password from the response
+        res.json({token,student});
     } catch (error) {
         next(error);
     }
