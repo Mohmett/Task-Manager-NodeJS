@@ -139,7 +139,7 @@ const TaskList = ({ tasks, isLoading, onEdit, onDelete, onStatusChange }) => {
 
             {/* Task Tabs */}
             <Tabs defaultValue="all" className="w-full">
-                <TabsList className="grid w-full grid-cols-4">
+                <TabsList className="grid w-full grid-cols-2 gap-2 md:grid-cols-4">
                     <TabsTrigger value="all">
                         All Tasks
                         <Badge variant="primary" className="ml-2"> {stats?.allTasks} </Badge>

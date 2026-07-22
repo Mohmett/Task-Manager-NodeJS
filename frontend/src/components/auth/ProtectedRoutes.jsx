@@ -23,7 +23,8 @@ const ProtectedRoutes = ({ children }) => {
             
         },
         retry: 2,
-    })
+    });
+    
     // Error Case
     useEffect(() => {
         if (isError) {
